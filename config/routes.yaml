@@ -1,0 +1,5 @@
+controllers:
+    resource:
+        path: ../src/RideBooking/Writes/Adapters/Primary/Symfony/Controllers/
+        namespace: App\RideBooking\Writes\Adapters\Primary\Symfony\Controllers
+    type: attribute

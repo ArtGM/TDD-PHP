@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    bind:
+      $googleApiKey: '%env(GOOGLE_API_KEY)%'
+
+  App\RideBooking\Writes\BusinessLogic\Gateways\TripScanning\TripScanner:
+    class: App\RideBooking\Writes\Adapters\Secondary\Gateways\TripScanning\GoogleTripScanner
+    public: true
+
+  App\RideBooking\Writes\BusinessLogic\Gateways\Repositories\RideRepository:
+    class: 'App\RideBooking\Writes\Adapters\Secondary\Gateways\Repositories\Doctrine\DoctrineRideRepository'
+    public: true
+
+  App\RideBooking\Writes\BusinessLogic\Gateways\Repositories\RidePriceRepository:
+    class: 'App\RideBooking\Writes\Adapters\Secondary\Gateways\Repositories\Doctrine\DoctrineRidePriceRepository'
+    public: true
+
+  App\RideBooking\Writes\BusinessLogic\Gateways\UuidGeneration\UuidGenerator:
+    class: 'App\RideBooking\Writes\Adapters\Secondary\Gateways\UuidGeneration\DeterministicUuidGenerator'

@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: wealcome
+      POSTGRES_PASSWORD: wealcome
+      POSTGRES_DB: ubertop_19-fev-mydb
+    ports:
+      - 5439:5432
+    volumes:
+      - ./docker-postgresql-data-for-dev:/var/lib/postgresql/data
+      - ./migrations/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./migrations/seed.sql:/docker-entrypoint-initdb.d/seed.sql

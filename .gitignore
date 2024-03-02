@@ -1,0 +1,41 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+.idea
+
+tests/coverage
+
+docker-postgresql-data-for-dev/
+docker-postgresql-data-for-test/
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+
+./php
+
+./docker-postgresql-data-for-test
+./docker-postgresql-data-for-dev
+
+./infection.phar.asc
+./infection.phar
+
+infection.html
+infection.log
+summary.json
+per-mutator.md
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
